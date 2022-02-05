@@ -9,6 +9,7 @@ import './App.css';
 function App(){
     const [robots, setRobots] = useState([]);
     const [searchfield, setSearchfild] = useState('');
+    const [count, setCount] = useState(0);
        
         
 
@@ -29,7 +30,7 @@ function App(){
             return robot.name.toLowerCase().includes(searchfield.toLowerCase())
         }) 
 
-        console.log(searchfield, robots);
+        console.log(count);
     return(
         
          !robots.length ? 
@@ -37,6 +38,7 @@ function App(){
              
             <div className='tc'>
                 <h1 className='f2'>RoboFriends</h1>
+                <button onClick={() =>setCount(count+1)}>Click me!</button>
                 <SearchBox searchChange={onSearchChange}/>
                 <Scroll>
                     <ErrorBoundry> 
